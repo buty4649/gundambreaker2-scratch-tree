@@ -6,11 +6,11 @@ gv = Gviz.new
 tree_data = Hash.new
 
 
-tree_data['???'] = {
-    :sym => :unknown,
-    :lnk => [],
-}
-gv.node :unknown, label:'派生先不明', style:'filled', fillcolor:'lightgray'
+#tree_data['???'] = {
+#    :sym => :unknown,
+#    :lnk => [],
+#}
+#gv.node :unknown, label:'派生先不明', style:'filled', fillcolor:'lightgray'
 
 CSV.foreach('tree.csv') {|row|
     row.pop if row[row.length].nil?
@@ -48,6 +48,6 @@ tree_data.each {|key, value|
 }
 
 gv.global layout:'fdp', overlap:false
-gv.global label:'ガンブレ2 派生先ツリー @buty4649 2014/12/20 rev.2', fontsize:72
+gv.global label:'ガンブレ2 派生先ツリー @buty4649 2014/12/22 rev.3', fontsize:72
 gv.nodes colorscheme:'set310', shape:'box', font:'IPAexゴシック', fontsize:32
 gv.save :tree, :png
